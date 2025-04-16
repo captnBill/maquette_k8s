@@ -34,14 +34,17 @@ check if successful with `docker images`; output should contain `app-9090`,
 then check with
 `kubectl get all --namespace=client-demo`
 
-all apps should be available to access upon forwarding ports
-django app should be available through ingress with `django.local`
+python apps should be available to access upon forwarding ports.
 
 ### open local access for ingress
 
 `echo "192.168.58.2 django.local" | sudo tee -a /etc/hosts`
 
 replace the ip address here with whatever you get from `minikube ip`
+
+after this, django app should be available through ingress with `django.local`.
+
+you can test `curl http://django.local` or open `http://django.local` in your browser.
 
 ## components
 
@@ -65,5 +68,5 @@ basic starter django project
 
 deployed with a standard deployment with no (1) replicas. Can be modified for scalability.
 
-accessible via ingress at `django.local`
+accessible via ingress at `django.local` through a ClusterIP service. 
 
