@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-8080
+  namespace: client-demo
+spec:
+  selector:
+    app: app-8080
+  ports:
+  - port: 8080
+    targetPort: 8080
+  type: LoadBalancer

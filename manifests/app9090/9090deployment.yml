@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-9090
+  namespace: client-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-9090
+  template:
+    metadata:
+      labels:
+        app: app-9090
+    spec:
+      containers:
+      - name: app
+        image: app-9090:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 9090
