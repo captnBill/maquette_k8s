@@ -37,6 +37,12 @@ then check with
 all apps should be available to access upon forwarding ports
 django app should be available through ingress with `django.local`
 
+### open local access for ingress
+
+`echo "192.168.58.2 django.local" | sudo tee -a /etc/hosts`
+
+replace the ip address here with whatever you get from `minikube ip`
+
 ## components
 
 ### namespace
